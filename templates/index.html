@@ -10,29 +10,36 @@
 
 <form action="/predict" method="post">
 
-    <input type="number" name="year" placeholder="Year" required>
-    <input type="number" name="km_driven" placeholder="KM Driven" required>
+    <input type="number" name="Year" placeholder="Year" required>
 
-    <select name="fuel">
-        <option value="0">Petrol</option>
-        <option value="1">Diesel</option>
+    <input type="number" name="Kilometers_Driven" placeholder="KM Driven" required>
+
+    <select name="Fuel_Type">
+        <option>Petrol</option>
+        <option>Diesel</option>
+        <option>CNG</option>
+        <option>LPG</option>
     </select>
 
-    <select name="transmission">
-        <option value="0">Manual</option>
-        <option value="1">Automatic</option>
+    <select name="Transmission">
+        <option>Manual</option>
+        <option>Automatic</option>
     </select>
 
-    <select name="owner">
-        <option value="0">First</option>
-        <option value="1">Second</option>
-        <option value="2">Third</option>
+    <select name="Owner_Type">
+        <option>First</option>
+        <option>Second</option>
+        <option>Third</option>
+        <option>Fourth & Above</option>
     </select>
 
-    <input type="number" step="any" name="mileage" placeholder="Mileage" required>
-    <input type="number" name="engine" placeholder="Engine CC" required>
-    <input type="number" step="any" name="power" placeholder="Power" required>
-    <input type="number" name="seats" placeholder="Seats" required>
+    <input type="number" step="0.1" name="Mileage" placeholder="Mileage" required>
+
+    <input type="number" step="0.1" name="Engine" placeholder="Engine CC" required>
+
+    <input type="number" step="0.1" name="Power" placeholder="Power" required>
+
+    <input type="number" name="Seats" placeholder="Seats" required>
 
     <button type="submit">Predict Price</button>
 
