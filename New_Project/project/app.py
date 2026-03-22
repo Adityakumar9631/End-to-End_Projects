@@ -67,10 +67,9 @@ def predict():
 
         prediction = model.predict(features)
 
-        # ✅ FIX: Extract scalar properly
         prediction_value = float(prediction.flatten()[0])
 
-        # ✅ Confidence (simple scaling)
+        
         confidence = round((prediction_value / (prediction_value + 1)) * 100, 2)
 
         return jsonify({

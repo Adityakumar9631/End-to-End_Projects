@@ -1,12 +1,6 @@
-// =======================
-// GLOBAL CHART VARIABLE
-// =======================
+
 let chart;
 
-
-// =======================
-// 🚀 PREDICT FUNCTION
-// =======================
 function predict() {
 
     let year = document.getElementById("year").value;
@@ -14,7 +8,7 @@ function predict() {
     let engine = document.getElementById("engine").value;
     let power = document.getElementById("power").value;
 
-    // Convert to numbers
+
     let features = [
         Number(year),
         Number(mileage),
@@ -22,13 +16,12 @@ function predict() {
         Number(power)
     ];
 
-    // ✅ Input validation
+  
     if (features.some(isNaN) || features.includes(0)) {
         alert("Please enter all fields correctly!");
         return;
     }
 
-    // ✅ Show loading state
     document.getElementById("result").innerText = "Predicting...";
     document.getElementById("confidence").innerText = "";
 
@@ -42,21 +35,21 @@ function predict() {
     .then(response => response.json())
     .then(data => {
 
-        // ❌ Backend error handling
+        
         if (data.error) {
             document.getElementById("result").innerText = data.error;
             return;
         }
 
-        // ✅ Show prediction
+      
         document.getElementById("result").innerText =
             "Prediction: ₹ " + data.prediction;
 
-        // ✅ Show confidence
+      
         document.getElementById("confidence").innerText =
             "Confidence: " + data.confidence + "%";
 
-        // ✅ Draw graph
+       
         drawChart(features);
     })
     .catch(error => {
@@ -66,9 +59,7 @@ function predict() {
 }
 
 
-// =======================
-// 📊 DRAW CHART FUNCTION
-// =======================
+
 function drawChart(data) {
 
     const labels = ['Year', 'Mileage', 'Engine', 'Power'];
@@ -109,9 +100,7 @@ function drawChart(data) {
 }
 
 
-// =======================
-// 🔥 LOAD DEFAULT GRAPH
-// =======================
+
 window.onload = function () {
     drawChart([0, 0, 0, 0]);
 };
