@@ -1,0 +1,42 @@
+body {
+    font-family: 'Segoe UI';
+    background: #f5f7fa;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+input {
+    padding: 10px;
+    margin: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+canvas {
+    margin-top: 30px;
+}
+
+#result {
+    color: #2c3e50;
+    margin-top: 20px;
+}
+
+#confidence {
+    color: #16a085;
+}
